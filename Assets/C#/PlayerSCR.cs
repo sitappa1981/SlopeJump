@@ -11,6 +11,8 @@ public class PlayerSCR : MonoBehaviour {
     float maxWalkSpeed = 2.0f;
     float threshold = 0.2f;
 
+    public static int point = 0;
+
     // Use this for initialization
     void Start () {
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -18,6 +20,7 @@ public class PlayerSCR : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
         // スペースキーを押した時にジャンプする
         if (Input.GetKeyDown(KeyCode.Space)) {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
@@ -42,7 +45,16 @@ public class PlayerSCR : MonoBehaviour {
 
         // 画面外に出た場合は最初から
         if (transform.position.y < -10) {
-            SceneManager.LoadScene("_Stage00");
+//            SceneManager.LoadScene("_Stage00");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.transform.gameObject.tag == "manure") {
+            point++;
+            DontDestroyOnLoad(this);
+            Destroy(other.gameObject);
+        }
+    }
+
 }

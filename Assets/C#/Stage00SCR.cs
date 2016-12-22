@@ -5,30 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Stage00SCR : MonoBehaviour {
 
-    public int maxpoint = 4;
     public int pointnow = 0;
+    public int maxpoint = 4;
 
     public GameObject manure;
 
+
+
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(this);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        
         Clear();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.transform.gameObject.tag == "manure") {
-            this.pointnow += 1;
-            Destroy(other.gameObject);
-        }
-    }
-
     void Clear() {
+        pointnow = PlayerSCR.point;
         if (pointnow >= maxpoint) {
+            pointnow = 0 ;
             SceneManager.LoadScene("_Clear");
         }
     }
