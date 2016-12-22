@@ -6,16 +6,23 @@ using System.Collections;
 public class PlayerSCR : MonoBehaviour {
 
     Rigidbody2D rigid2D;
+
     float jumpForce = 400.0f;
     float walkForce = 30.0f;
     float maxWalkSpeed = 2.0f;
     float threshold = 0.2f;
 
-    public static int point = 0;
+    public int pointnow;
+
+    public int point;
 
     // Use this for initialization
     void Start () {
+
+        point = 0;
+
         this.rigid2D = GetComponent<Rigidbody2D>();
+//        DontDestroyOnLoad(transform.gameObject);
     }
 
     // Update is called once per frame
@@ -28,7 +35,7 @@ public class PlayerSCR : MonoBehaviour {
         // 左右移動
         int key = 0;
         if (Input.GetKey(KeyCode.RightArrow)) key = 1;
-        if (Input.GetKey(KeyCode.LeftArrow)) key = -1;
+        if (Input.GetKey(KeyCode.LeftArrow)) key =  -1;
 
         // プレイヤーの速度
         float speedx = Mathf.Abs(this.rigid2D.velocity.x);
@@ -45,16 +52,15 @@ public class PlayerSCR : MonoBehaviour {
 
         // 画面外に出た場合は最初から
         if (transform.position.y < -10) {
-//            SceneManager.LoadScene("_Stage00");
+            GameData.Point = 0;
+            SceneManager.LoadScene("_Stage00");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.gameObject.tag == "manure") {
-            point++;
-            DontDestroyOnLoad(this);
+            GameData.Point++;
             Destroy(other.gameObject);
         }
     }
-
 }

@@ -79,10 +79,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\C%23\ClearSCR.cs" />
+    <Compile Include="Assets\C%23\GameData.cs" />
     <Compile Include="Assets\C%23\PlayerSCR.cs" />
     <Compile Include="Assets\C%23\Stage00SCR.cs" />
     <Compile Include="Assets\C%23\StageChange.cs" />
+    <Compile Include="Assets\C%23\StageSelectSCR.cs" />
     <Compile Include="Assets\C%23\StartSCR.cs" />
+    <Compile Include="Assets\Stage01.cs" />
+    <Compile Include="Assets\Stage02.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

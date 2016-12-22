@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Stage00SCR : MonoBehaviour {
 
-    public int pointnow = 0;
+    public int pointnow;
     public int maxpoint = 4;
+    public int Num = 00;
 
     public GameObject manure;
 
@@ -14,22 +15,19 @@ public class Stage00SCR : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        GameData.Stage = Num;
     }
 
     // Update is called once per frame
     void Update () {
-        
+        pointnow = GameData.Point;
         Clear();
     }
 
     void Clear() {
-        pointnow = PlayerSCR.point;
+        pointnow = GameData.Point;
         if (pointnow >= maxpoint) {
-            pointnow = 0 ;
             SceneManager.LoadScene("_Clear");
         }
     }
-
-
 }

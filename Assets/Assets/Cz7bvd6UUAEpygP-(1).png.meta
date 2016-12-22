@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 941f32c0b2a592248aa55e5b001b5a60
-timeCreated: 1482276150
+timeCreated: 1482425737
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Dendrobium
     21300002: manure_Red
+    21300004: StarTwo
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -78,6 +79,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 1, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: StarTwo
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 950
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
