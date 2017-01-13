@@ -9,17 +9,17 @@ public class Stage00SCR : MonoBehaviour {
     public int maxpoint = 4;
     public int Num = 00;
 
-    public GameObject manure;
-
-
+    GameObject gryo;
 
 	// Use this for initialization
 	void Start () {
         GameData.Stage = Num;
+        this.gryo = GameObject.Find("gyro");
     }
 
     // Update is called once per frame
     void Update () {
+        this.gryo.GetComponent<Text>().text = Input.acceleration.ToString();
         pointnow = GameData.Point;
         Clear();
     }
