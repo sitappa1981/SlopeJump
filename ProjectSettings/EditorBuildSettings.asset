@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/_GameOver.unity
   - enabled: 1
     path: Assets/_Clear.unity
+  - enabled: 1
+    path: Assets/_Stage01.unity

@@ -82,6 +82,7 @@
     <Compile Include="Assets\C%23\GameData.cs" />
     <Compile Include="Assets\C%23\PlayerSCR.cs" />
     <Compile Include="Assets\C%23\Stage00SCR.cs" />
+    <Compile Include="Assets\C%23\Stage01SCR.cs" />
     <Compile Include="Assets\C%23\StageChange.cs" />
     <Compile Include="Assets\C%23\StageSelectSCR.cs" />
     <Compile Include="Assets\C%23\StartSCR.cs" />

@@ -28,7 +28,7 @@ public class StageSelectSCR : MonoBehaviour {
     }
 
     public void Stage01() {
-
+        SceneManager.LoadScene("_Stage01");
     }
     public void Stage02() {
 

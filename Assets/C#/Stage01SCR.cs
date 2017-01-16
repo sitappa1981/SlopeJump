@@ -3,23 +3,23 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class Stage00SCR : MonoBehaviour {
+public class Stage01SCR : MonoBehaviour {
 
     public int pointnow;
-    public int maxpoint00;
-    public int Num = 0;
+    public int maxpoint01;
+    public int Num = 1;
 
     GameObject gryo;
 
-	// Use this for initialization
-	void Start () {
-        GameData.MaxPoint = 4;
+    // Use this for initialization
+    void Start() {
+        GameData.MaxPoint = 6;
         GameData.Stage = Num;
-        this.gryo = GameObject.Find("gyro");
+        GameData.Point = 0;
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         pointnow = GameData.Point;
         Clear();
     }
