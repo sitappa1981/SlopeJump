@@ -20,6 +20,9 @@ public class PlayerSCR : MonoBehaviour {
     public int point;
     public int key = 0;
 
+    public bool pushl = false;
+    public bool pushr = false;
+
     // Use this for initialization
     void Start() {
         point = 0;
@@ -31,17 +34,28 @@ public class PlayerSCR : MonoBehaviour {
     void FixedUpdate() {
 
         // スペースキーを押した時にジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+        if (Input.GetKeyDown(KeyCode.Space)){ 
             GetComponent<AudioSource>().PlayOneShot(JumpSE);
             this.rigid2D.AddForce(transform.up * this.jumpForce);
+        
         }
         // 左右移動
-
         if (Input.GetKey(KeyCode.RightArrow)) {
             key = 1;
         } else if (Input.GetKey(KeyCode.LeftArrow)) {
             key = -1;
         } else {
+            key = 0;
+        }
+
+        // 左右移動端末用
+        if (pushl) {
+            key = -1;
+        }
+        if (pushr) {
+            key = 1;
+        }
+        if (!pushl && !pushr) {
             key = 0;
         }
 
@@ -90,6 +104,30 @@ public class PlayerSCR : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
+
+    public void LButton() {
+        pushl = true;
+    }
+
+    public void LButtonUP() {
+        pushl = false;
+    }
+
+
+    public void RButton() {
+        pushr = true;
+    }
+
+    public void RButonUP() {
+        pushr = false;
+    }
+
+    public void UButton() {
+        GetComponent<AudioSource>().PlayOneShot(JumpSE);
+        this.rigid2D.AddForce(transform.up * this.jumpForce);
+    }
+
+
 }
 
 

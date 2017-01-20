@@ -11,6 +11,7 @@ public class Stage00SCR : MonoBehaviour {
 
     GameObject gryo;
 
+
 	// Use this for initialization
 	void Start () {
         GameData.MaxPoint = 4;
